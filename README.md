@@ -1,0 +1,3 @@
+# PESprite for cocos2d
+
+README coming...

@@ -1,0 +1,2 @@
+# treats your Xcode project file as a binary; prevents Git from trying to fix newlines, show in diffs, and excludes from merges
+*.pbxproj -crlf -diff -merge
