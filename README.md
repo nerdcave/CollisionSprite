@@ -1,12 +1,10 @@
 # PESprite - cocos2d collision detection made easy
-----------------------------------------------
 PESprite is ideal when you need accurate collision detection between sprites but don't want a full, physics-driven, Box2d app.  It uses Box2d just for collision detection by using its collision methods directly; there's no need to setup a world, bodies, or contact listener.
 
 Simply trace out your sprites using [**PhysicsEditor**](<http://
 www.physicseditor.de>) and set their anchor points, create the sprites with PESprite, and just call **intersectsTarget:** with another PESprite to check for collision.
 
 ## Installation
-----------------------------------------------
 Nothing tricky, just drag the files in the **source** folder into your project and put
 ```objective-c
 #import "PESprite.h"
@@ -17,7 +15,6 @@ Since Box2d is required, your project must have been created as a cocos2d Box2d 
 
 
 ## How to use
-----------------------------------------------
 Use PhysicsEditor to trace out your sprites and export the plist file.  **Important:** You must set each sprite's anchor point in PhysicsEditor itself because it will be used automatically by PESprite.  None of the other properties for your sprite in PhysicsEditor are relevant.
 
 ### Simplified code
@@ -41,7 +38,6 @@ if ([ship intersectsTarget:satellite]) {
 ```
 
 ## Details
-----------------------------------------------
 PESprite should be super easy to use but does have a few limitations.
 
 ### Features:
@@ -56,12 +52,10 @@ PESprite should be super easy to use but does have a few limitations.
 * Drawing the sprite's polygons to the screen for debugging purposes
 
 ## Example project
-----------------------------------------------
 The **PhysicsEditorSpriteTest** example project is both a **universal** application and supports the iPhone retina display.  When run on the iPad, it also loads the iPhone retina HD sprites by using the **UNIV()** macro, included in **PESpriteConfig.h**.  iPad Retina isn't supported yet.
 
 It's important to note that the HD images are used in PhysicsEditor. Open the physicsEditorObjects.pes file in PhysicsEditor to check it out.
 
 
 ## Contact me
-----------------------------------------------
 Have questions or needs some help?  Feel free to email me <jay@nerdcave.com> or hit me up on the twitters: [@nerdcave](http://twitter.com/nerdcave).
