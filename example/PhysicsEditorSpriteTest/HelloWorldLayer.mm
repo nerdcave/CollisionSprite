@@ -10,26 +10,16 @@
 #import "HelloWorldLayer.h"
 #import "PESprite.h"
 
-// HelloWorldLayer implementation
 @implementation HelloWorldLayer
 
-+(CCScene *) scene
-{
-	// 'scene' is an autorelease object.
++(CCScene *) scene {
 	CCScene *scene = [CCScene node];
-	
-	// 'layer' is an autorelease object.
 	HelloWorldLayer *layer = [HelloWorldLayer node];
-	
-	// add layer as a child to scene
 	[scene addChild: layer];
-	
-	// return the scene
 	return scene;
 }
 
--(id) init
-{
+-(id) init {
 	if( (self = [super init]) ) {
 
 		// enable touch
@@ -38,8 +28,9 @@
 		// load the shape data created by PhysicsEditor
 		[[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"data/physicsEditorObjects.plist"];
 
-		// create some PESprites just as you would CCSprites
+		// create a PESprite just as you would a CCSprite
 		PESprite *ship = [PESprite spriteWithFile:UNIV(@"images/spaceship.png")];
+		// important!!! set this property to its shape name in PhysicsEditor
 		ship.physicsEditorName = @"spaceship";
 		[self addChild:ship];
 		ship.position = ccp(400, 100);
@@ -53,6 +44,11 @@
 		chair.physicsEditorName = @"chair";
 		[self addChild:chair];
 		chair.position = ccp(100, 260);
+
+		PESprite *earth = [PESprite spriteWithFile:UNIV(@"images/earth.png")];
+		earth.physicsEditorName = @"earth";
+		[self addChild:earth];
+		earth.position = ccp(450, 260);
 
 		CGSize winSize = [[CCDirector sharedDirector] winSize];
 		infoLabel = [CCLabelTTF labelWithString:@"Drag images to test collisions" fontName:@"Arial" fontSize:30];
@@ -71,6 +67,7 @@
 	CCARRAY_FOREACH([self children], node) {
 		if (selectedSprite != node && [node isKindOfClass:[PESprite class]]) {
 			PESprite *sprite = (PESprite*)node;
+			// test for intersection
 			if ([selectedSprite intersectsTarget:sprite]) {
 				[infoLabel setString:[NSString stringWithFormat:@"%@ and %@ HIT!", selectedSprite.physicsEditorName, sprite.physicsEditorName]];
 				hit = YES;

@@ -37,8 +37,8 @@
 
 
 @interface PESprite : CCSprite {
-    b2Transform		*box2dTransform;
-    FixtureDef		*fixtureDef;
+	b2Transform		*box2dTransform;
+	FixtureDef		*fixtureDef;
 	NSString*		physicsEditorName;
 	CGFloat			scaleFactor;
 }
