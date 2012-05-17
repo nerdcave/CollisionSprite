@@ -155,7 +155,6 @@
 		693428A01562E41500F67B1F /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6934289F1562E41500F67B1F /* AppDelegate.mm */; };
 		693428A31562E41500F67B1F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 693428A21562E41500F67B1F /* RootViewController.m */; };
 		693428A61562E41500F67B1F /* HelloWorldLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 693428A51562E41500F67B1F /* HelloWorldLayer.mm */; };
-		693428A91562E41500F67B1F /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = 693428A81562E41500F67B1F /* GLES-Render.mm */; };
 		693428C31562E6A600F67B1F /* images in Resources */ = {isa = PBXBuildFile; fileRef = 693428C21562E6A600F67B1F /* images */; };
 		69B0C36B15645F7A00617674 /* GB2ShapeCache.mm in Sources */ = {isa = PBXBuildFile; fileRef = 69B0C36815645F5D00617674 /* GB2ShapeCache.mm */; };
 		69B0C36C15645F7D00617674 /* PESprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = 69B0C36A15645F5D00617674 /* PESprite.mm */; };
@@ -464,13 +463,11 @@
 		693428A21562E41500F67B1F /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		693428A41562E41500F67B1F /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
 		693428A51562E41500F67B1F /* HelloWorldLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HelloWorldLayer.mm; sourceTree = "<group>"; };
-		693428A71562E41500F67B1F /* GLES-Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
-		693428A81562E41500F67B1F /* GLES-Render.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
 		693428AA1562E41500F67B1F /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		693428C21562E6A600F67B1F /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = images; path = Resources/images; sourceTree = "<group>"; };
 		69B0C36715645F5D00617674 /* GB2ShapeCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GB2ShapeCache.h; path = ../../source/GB2ShapeCache.h; sourceTree = "<group>"; };
 		69B0C36815645F5D00617674 /* GB2ShapeCache.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = GB2ShapeCache.mm; path = ../../source/GB2ShapeCache.mm; sourceTree = "<group>"; };
-		69B0C36915645F5D00617674 /* PESprite.h */ = {isa = PBXFileReference; name = PESprite.h; path = ../../source/PESprite.h; sourceTree = "<group>"; };
+		69B0C36915645F5D00617674 /* PESprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PESprite.h; path = ../../source/PESprite.h; sourceTree = "<group>"; };
 		69B0C36A15645F5D00617674 /* PESprite.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = PESprite.mm; path = ../../source/PESprite.mm; sourceTree = "<group>"; };
 		69B0C36D1564682E00617674 /* PESpriteConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PESpriteConfig.h; path = ../../source/PESpriteConfig.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -548,8 +545,6 @@
 				6934289F1562E41500F67B1F /* AppDelegate.mm */,
 				693428A11562E41500F67B1F /* RootViewController.h */,
 				693428A21562E41500F67B1F /* RootViewController.m */,
-				693428A71562E41500F67B1F /* GLES-Render.h */,
-				693428A81562E41500F67B1F /* GLES-Render.mm */,
 				693428AA1562E41500F67B1F /* GameConfig.h */,
 				693426DA1562E40D00F67B1F /* Resources */,
 				693426EE1562E40D00F67B1F /* libs */,
@@ -1206,7 +1201,6 @@
 				693428A01562E41500F67B1F /* AppDelegate.mm in Sources */,
 				693428A31562E41500F67B1F /* RootViewController.m in Sources */,
 				693428A61562E41500F67B1F /* HelloWorldLayer.mm in Sources */,
-				693428A91562E41500F67B1F /* GLES-Render.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
