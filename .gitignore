@@ -6,8 +6,8 @@
 
 # Xcode noise, after https://github.com/github/gitignore/blob/master/Objective-C.gitignore
 build/*
-*.pbxproj
-*.xcodeproj
+#*.pbxproj
+#*.xcodeproj
 *.pbxuser
 !default.pbxuser
 *.mode1v3
