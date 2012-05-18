@@ -31,13 +31,10 @@
 
 #define PTM_RATIO					32
 
-// size factor of images in PhysicsEditor
-#define PE_SHAPES_PIXELS_PER_POINT	2.0
-
 #define IS_IPAD()					(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 #define IPAD_SCALE()				(IS_IPAD() ? 2: 1)
-#define PTM_RATIO_SCALED			((PTM_RATIO / PE_SHAPES_PIXELS_PER_POINT) * CC_CONTENT_SCALE_FACTOR() * IPAD_SCALE())
-#define UNIV(__f__)					(IS_IPAD() ? [__f__ stringByReplacingCharactersInRange:[__f__ rangeOfString:@"."] withString:@"-hd."]: __f__)
+#define PTM_RATIO_SCALED			(PTM_RATIO * CC_CONTENT_SCALE_FACTOR() * IPAD_SCALE())
+#define UNIV(__f__)					(IS_IPAD() ? [__f__ stringByReplacingCharactersInRange:[__f__ rangeOfString:@"." options:NSBackwardsSearch] withString:@"-hd."]: __f__)
 
 
 // expose a few of GB2ShapeCache's inner classes

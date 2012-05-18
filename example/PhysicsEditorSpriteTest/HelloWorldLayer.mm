@@ -21,6 +21,7 @@
 
 -(id) init {
 	if( (self = [super init]) ) {
+		//NSLog(@"csf: %f", CC_CONTENT_SCALE_FACTOR());
 
 		// enable touch
 		[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
@@ -29,6 +30,7 @@
 		[[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"data/physicsEditorObjects.plist"];
 
 		// create a PESprite just as you would a CCSprite
+		// UNIV() macro will force the -hd version of the image if this is being run on the iPad
 		PESprite *ship = [PESprite spriteWithFile:UNIV(@"images/spaceship.png")];
 		// important!!! set this property to its shape name in PhysicsEditor
 		ship.physicsEditorName = @"spaceship";

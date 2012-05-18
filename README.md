@@ -1,23 +1,22 @@
 # PESprite - cocos2d collision detection made easy
-PESprite is ideal when you need accurate collision detection between sprites but don't want a full, physics-driven, Box2d app.  It uses Box2d just for collision detection by using its collision methods directly; there's no need to setup a world, bodies, or contact listener.
+PESprite is a CCSprite replacement for cocos2d that supports collision detection.  It's ideal when you need accurate collision detection between sprites but don't want a full, physics-driven, Box2D app.  It uses Box2D's collision methods directly so there's no need to create a world, bodies, or contact listener.
 
-Simply trace out your sprites using [**PhysicsEditor**](<http://
-www.physicseditor.de>) and set their anchor points, create the sprites with PESprite, and just call **intersectsTarget:** with another PESprite to check for collision.
+Simply trace out your (low-res) sprites using [PhysicsEditor](<http://www.physicseditor.de>), create your sprites as PESprite objects, and call **intersectsTarget:** to check for collision.
 
-## Installation
-Nothing tricky, just drag the files in the **source** folder into your project and put
+## Installing
+Just drag the files from this repo's **source** folder into your project and put
 ```objective-c
 #import "PESprite.h"
 ```
-at the top of whatever source file you want to use PESprite.
-
-Since Box2d is required, your project must have been created as a cocos2d Box2d type. If it wasn't, you can just drag the **external/Box2d/Box2d** folder from the cocos2d source into your project's **libs** group.  Note, you want the **Box2d** **subfolder** in **external/Box2d**.  You may also need to rename your **.m** files to **.mm** if you get weird compilation errors.
-
+at the top of whatever source file you want to use PESprite.  Your project must have Box2D included.
 
 ## How to use
-Use PhysicsEditor to trace out your sprites and export the plist file.  **Important:** You must set each sprite's anchor point in PhysicsEditor itself because it will be used automatically by PESprite.  None of the other properties for your sprite in PhysicsEditor are relevant.
+* Use [PhysicsEditor](<http://www.physicseditor.de>) to trace out the **lowest resolution** sprites used in your project.  It's important to use your low-res sprites to ensure PESprite works properly.
+* Set each sprite's **anchor point** in PhysicsEditor, which will be used automatically by PESprite.  Ignore the other properties.
+* Set PhysicsEditor's Exporter to "Box2D generic (PLIST)" and export the plist file to your Resources folder
+* Then just write the code…
 
-### Simplified code
+### Simplified example:
 ```objective-c
 // load the shape data created by PhysicsEditor
 [[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"data/physicsEditorObjects.plist"];
@@ -36,26 +35,33 @@ if ([ship intersectsTarget:satellite]) {
 	NSLog(@"hit!");
 }
 ```
+## Example project
+**PhysicsEditorSpriteTest** is located in this repo's example folder and demonstrates the following:
+
+* Drag around PESprite objects to test for collisions.
+* Universal application, so it displays full screen on both the iPhone and iPad.
+* Retina-enabled for the iPhone, so HD images are included and displayed when appropriate.  PESprite will handle each case automatically.
+* When run on the iPad, it will display the project's HD images by using the **UNIV()** macro, included in PESpriteConfig.h.
+
+Note: iPad Retina isn't supported yet.
 
 ## Details
-PESprite should be super easy to use but does have a few limitations.
+PESprite's features and limitations are outlined below.
+### Requires:
+* cocos2d project with Box2D included (<http://www.cocos2d-iphone.org/>)
+* PhysicsEditor (<http://www.physicseditor.de>)
 
 ### Features:
-* Lightweight, no need to create any Box2d objects such as a world or bodies
+* Lightweight, easy to use
 * Supports PhysicsEditor polygons and circles
 * Handles iPhone retina and iPad sprite sizing
 * Supports sprite scaling
+* No need to create any Box2D objects (world, bodies, etc)
 
 ### To-do:
-* iPad retina support
+* iPad retina support (example project would require ugprading its cocos2d source)
 * Collision detection of rotated sprite
-* Drawing the sprite's polygons to the screen for debugging purposes
-
-## Example project
-The **PhysicsEditorSpriteTest** example project is both a **universal** application and supports the iPhone retina display.  When run on the iPad, it also loads the iPhone retina HD sprites by using the **UNIV()** macro, included in **PESpriteConfig.h**.  iPad Retina isn't supported yet.
-
-It's important to note that the HD images are used in PhysicsEditor. Open the physicsEditorObjects.pes file in PhysicsEditor to check it out.
-
+* Drawing the polygons to the screen for debugging
 
 ## Contact me
 Have questions or needs some help?  Feel free to email me <jay@nerdcave.com> or hit me up on the twitters: [@nerdcave](http://twitter.com/nerdcave).
