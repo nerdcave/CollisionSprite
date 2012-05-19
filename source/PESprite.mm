@@ -154,13 +154,13 @@
 @implementation GB2ShapeCache (GB2ShapeCache_Helpers)
 
 -(FixtureDef*) fixturesForShape:(NSString*)shape {
-    BodyDef *bd = [shapeObjects_ objectForKey:shape];
-    assert(bd);
+	BodyDef *bd = [shapeObjects_ objectForKey:shape];
+	assert(bd);
 	return bd->fixtures;
 }
 
 -(BOOL) shapeExists:(NSString*)shape {
-    return !![shapeObjects_ objectForKey:shape];
+	return !![shapeObjects_ objectForKey:shape];
 }
 
 @end

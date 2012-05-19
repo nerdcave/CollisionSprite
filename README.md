@@ -13,7 +13,7 @@ at the top of whatever source file you want to use PESprite.  Your project must 
 ## How to use
 * Use [PhysicsEditor](<http://www.physicseditor.de>) to trace out the **lowest resolution** sprites used in your project.  It's important to use your low-res sprites to ensure PESprite works properly.
 * Set each sprite's **anchor point** in PhysicsEditor, which will be used automatically by PESprite.  Ignore the other properties.
-* Set PhysicsEditor's Exporter to "Box2D generic (PLIST)" and export the plist file to your Resources folder
+* Set PhysicsEditor's Exporter to "Box2D generic (PLIST)" and export the plist file to your Resources folder.
 * Then just write the code…
 
 ### Simplified example:
@@ -64,4 +64,4 @@ PESprite's features and limitations are outlined below.
 * Drawing the polygons to the screen for debugging
 
 ## Contact me
-Have questions or needs some help?  Feel free to email me <jay@nerdcave.com> or hit me up on the twitters: [@nerdcave](http://twitter.com/nerdcave).
+Have questions or needs some help?  Feel free to email me: <jay@nerdcave.com> or hit me up on the twitters: [@nerdcave](http://twitter.com/nerdcave).
