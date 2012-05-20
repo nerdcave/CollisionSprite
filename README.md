@@ -7,15 +7,15 @@ Simply trace out your (low-res) sprites using [PhysicsEditor](<http://www.physic
 First, your project must have Box2D included.  If it doesn't, you may have to create a new cocos2d Box2D project type and copy your existing source into it.
 
 Clone the repo:
+
 	git clone git://github.com/nerdcave/PESprite.git
 	cd PESprite
 	open .
 
-Then just drag the files from this repo's **source** folder into your project and put
+Then just drag the files from this repo's **source** folder into your project and put this at the top of whatever source file you want to use PESprite:
 ```objective-c
 #import "PESprite.h"
 ```
-at the top of whatever source file you want to use PESprite.
 
 If you try to compile and get an **Apple Mach-O Linker (Id) Error**, follow these steps:
 * Go to your project configuration and click on your project under TARGETS
@@ -28,7 +28,7 @@ If you try to compile and get an **Apple Mach-O Linker (Id) Error**, follow thes
 * Use [PhysicsEditor](<http://www.physicseditor.de>) to trace out the **lowest resolution** sprites used in your project.  It's important to use your low-res sprites to ensure PESprite works properly.
 * Set each sprite's **anchor point** in PhysicsEditor, which will be used automatically by PESprite.  Ignore the other properties.
 * Set PhysicsEditor's Exporter to "Box2D generic (PLIST)" and export the plist file to your Resources folder.
-* Then just write the code…
+* Then just write some code…
 
 ### Simplified example:
 ```objective-c
@@ -50,7 +50,7 @@ if ([ship intersectsTarget:satellite]) {
 }
 ```
 ## Example projects
-This repo's examples folder contains two example projects that allow you to drag around sprites to test for collisions. Both are universal apps, so they will display full screen on the iPhone and iPad.
+This repo's **examples** folder contains two example projects that allow you to drag around sprites to test for collisions. Both are universal apps, so they will display full screen on the iPhone and iPad.
 
 ### examples/cocos2d 1.x (no iPad retina)
 * Uses cocos2d 1.x, so this project works for the iPhone, retina-enabled iPhone, and non-retina iPad; the new iPad retina display is not supported.
