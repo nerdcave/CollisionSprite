@@ -5,10 +5,10 @@
 //  Copyright 2012, Jay Elaraj
 //		http://nerdcave.com
 //
+//  All rights reserved.
+//
 //	Uses PhysicsEditor by Andreas Loew
 //		http://www.PhysicsEditor.de
-//
-//  All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -51,14 +51,16 @@
 	return b2Vec2(position.x / (PTM_RATIO_SCALED * scale), position.y / (PTM_RATIO_SCALED * scale));
 }
 
--(id) init {
-	if ( (self = [super init]) ) {
+// correct initializer when subclassing CCSprite (http://www.cocos2d-iphone.org/wiki/doku.php/prog_guide:sprites#how_to_subclass_sprites)
+-(id) initWithTexture:(CCTexture2D*)texture rect:(CGRect)rect {
+	if ( (self = [super initWithTexture:texture rect:rect]) ) {
 		box2dTransform = new b2Transform;
 		self.scaleInWorld = 1;
 	}
 	return self;
 }
 
+// when the physicsEditorName property is set, set the anchor point and read the fixtures
 -(void) setPhysicsEditorName:(NSString *)_physicsEditorName {
 	[physicsEditorName release];
 	physicsEditorName = [_physicsEditorName copy];
@@ -69,6 +71,7 @@
 	}
 }
 
+// updates the transform to the sprite's current position
 -(void) updateB2Transform {
 	box2dTransform->Set([PESprite ptmScaledWithPosition:self.positionInWorldInPixels scale:self.scaleInWorld], 0.0f);
 }
@@ -137,6 +140,7 @@
 	return NO;
 }
 
+// hit test self and target polygons; check the bounding rects by default
 -(BOOL) intersectsTarget:(PESprite*)target {
 	return [self intersectsTarget:target testRectIntersection:YES];
 }
@@ -166,6 +170,7 @@
 @end
 
 
+// these are generic enough to just extend CCNode
 @implementation CCNode (PESprite_Helpers)
 
 -(CGRect) boundingBoxInWorld {

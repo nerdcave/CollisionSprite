@@ -5,10 +5,10 @@
 //  Copyright 2012, Jay Elaraj
 //		http://nerdcave.com
 //
+//  All rights reserved.
+//
 //	Uses PhysicsEditor by Andreas Loew
 //		http://www.PhysicsEditor.de
-//
-//  All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -34,11 +34,9 @@
 #define IS_IPAD()					(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 #define IPAD_SCALE()				(IS_IPAD() ? 2: 1)
 #define PTM_RATIO_SCALED			(PTM_RATIO * CC_CONTENT_SCALE_FACTOR() * IPAD_SCALE())
-#define UNIV(__f__)					(IS_IPAD() ? [__f__ stringByReplacingCharactersInRange:[__f__ rangeOfString:@"." options:NSBackwardsSearch] withString:@"-hd."]: __f__)
 
 
-// expose a few of GB2ShapeCache's inner classes
-// not ideal, but works for now
+// expose a few of GB2ShapeCache's inner classes; not ideal, but works for now
 class FixtureDef {
 public:
     FixtureDef *next;
