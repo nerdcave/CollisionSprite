@@ -166,7 +166,6 @@
 		692F27B3156858E20080FA89 /* GB2ShapeCache.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = GB2ShapeCache.mm; path = ../../../source/GB2ShapeCache.mm; sourceTree = "<group>"; };
 		692F27B4156858E20080FA89 /* PESprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PESprite.h; path = ../../../source/PESprite.h; sourceTree = "<group>"; };
 		692F27B5156858E20080FA89 /* PESprite.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = PESprite.mm; path = ../../../source/PESprite.mm; sourceTree = "<group>"; };
-		692F27B6156858E20080FA89 /* PESpriteConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PESpriteConfig.h; path = ../../../source/PESpriteConfig.h; sourceTree = "<group>"; };
 		693426C51562E40D00F67B1F /* PhysicsEditorSpriteTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhysicsEditorSpriteTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		693426C91562E40D00F67B1F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		693426CB1562E40D00F67B1F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -498,7 +497,6 @@
 				692F27B3156858E20080FA89 /* GB2ShapeCache.mm */,
 				692F27B4156858E20080FA89 /* PESprite.h */,
 				692F27B5156858E20080FA89 /* PESprite.mm */,
-				692F27B6156858E20080FA89 /* PESpriteConfig.h */,
 			);
 			name = "PhysicsEditorSprite Classes";
 			sourceTree = "<group>";

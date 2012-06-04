@@ -1,7 +1,7 @@
 # PESprite - cocos2d collision detection made easy
-PESprite is a CCSprite replacement for cocos2d that supports collision detection.  It's ideal when you need accurate collision detection between sprites but don't want a full, physics-driven, Box2D app.  It uses Box2D's collision methods directly so there's no need to create a world, bodies, or contact listener.
+PESprite is a CCSprite extension for cocos2d that supports collision detection.  It's ideal when you need accurate collision detection between sprites but don't want a full, physics-driven, Box2D app.  It uses Box2D's collision methods directly so there's no need to create a world, bodies, or contact listener.
 
-Simply trace out your (low-res) sprites using [PhysicsEditor](<http://www.physicseditor.de>), create your sprites as PESprite objects, and call **intersectsTarget:** to check for collision.
+Simply trace out your (low-res) sprites using [PhysicsEditor](<http://www.codeandweb.com/physicseditor>), create your sprites as PESprite objects, and call **intersectsTarget:** to check for collision.
 
 ## Installing
 First, your project must have Box2D included.  If it doesn't, you may have to create a new cocos2d Box2D project type and copy your existing source into it.
@@ -25,7 +25,7 @@ If you try to compile and get an **Apple Mach-O Linker (Id) Error**, follow thes
 * Recompile
 
 ## How to use
-* Use [PhysicsEditor](<http://www.physicseditor.de>) to trace out the **lowest resolution** sprites used in your project.  It's important to use your low-res sprites to ensure PESprite works properly.
+* Use [PhysicsEditor](<http://www.codeandweb.com/physicseditor>) to trace out the **lowest resolution** sprites used in your project.  It's important to use your low-res sprites to ensure PESprite works properly.
 * Set each sprite's **anchor point** in PhysicsEditor, which will be used automatically by PESprite.  Ignore the other properties.
 * Set PhysicsEditor's Exporter to "Box2D generic (PLIST)" and export the plist file to your Resources folder.
 * Then just write some code…
@@ -66,7 +66,7 @@ This repo's **examples** folder contains two example projects that allow you to 
 PESprite's features and to-dos are outlined below.
 ### Requires:
 * cocos2d project with Box2D included (<http://www.cocos2d-iphone.org/>)
-* PhysicsEditor (<http://www.physicseditor.de>)
+* PhysicsEditor (<http://www.codeandweb.com/physicseditor>)
 
 ### Features:
 * Lightweight, easy to use

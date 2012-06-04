@@ -1,14 +1,12 @@
 //
 //  GB2ShapeCache.h
 //  
-//  Loads physics sprites created with http://www.PhysicsEditor.de
+//  Loads physics sprites created with http://www.codeandweb.com/physicseditor
 //
 //  Generic Shape Cache for box2d
 //
 //  Copyright by Andreas Loew 
-//      http://www.PhysicsEditor.de
-//      http://texturepacker.com
-//      http://www.code-and-web.de
+//      http://www.codeandweb.com
 //  
 //  All rights reserved.
 //

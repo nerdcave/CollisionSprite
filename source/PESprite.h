@@ -1,39 +1,41 @@
 //
 //  PESprite.h
-//  Replacement for CCSprite when you need polygonal collision detection.
+//  Extension for CCSprite when you need polygonal collision detection.
 //
 //  Copyright 2012, Jay Elaraj
 //		http://nerdcave.com
 //
 //  All rights reserved.
 //
-//	Uses PhysicsEditor by Andreas Loew
-//		http://www.PhysicsEditor.de
+//	Released under the MIT license.
 //
-//  Permission is hereby granted, free of charge, to any person obtaining a copy
-//  of this software and associated documentation files (the "Software"), to deal
-//  in the Software without restriction, including without limitation the rights
-//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-//  copies of the Software, and to permit persons to whom the Software is
-//  furnished to do so, subject to the following conditions:
-//  
-//  The above copyright notice and this permission notice shall be included in
-//  all copies or substantial portions of the Software.
-//  
-//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-//  THE SOFTWARE.
+//	Uses PhysicsEditor by Andreas Loew
+//		http://www.codeandweb.com/physicseditor
 //
 
 #import "cocos2d.h"
 #import "Box2D.h"
-
 #import "GB2ShapeCache.h"
-#import "PESpriteConfig.h"
+
+
+#define PTM_RATIO					32
+#define IS_IPAD()					(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IPAD_SCALE()				(IS_IPAD() ? 2: 1)
+#define PTM_RATIO_SCALED			(PTM_RATIO * CC_CONTENT_SCALE_FACTOR() * IPAD_SCALE())
+
+// expose a few of GB2ShapeCache's inner classes; not ideal, but works for now
+class FixtureDef {
+public:
+    FixtureDef *next;
+    b2FixtureDef fixture;
+};
+
+@interface BodyDef : NSObject {
+@public
+    FixtureDef *fixtures;
+    CGPoint anchorPoint;
+}
+@end
 
 
 @interface PESprite : CCSprite {
@@ -43,9 +45,9 @@
 	CGFloat			scaleFactor;
 }
 
-@property (nonatomic, readonly) FixtureDef*		fixtureDef;
-@property (nonatomic, readonly) b2Transform*	box2dTransform;
-@property (nonatomic, copy) NSString*			physicsEditorName;
+@property (nonatomic, readonly) FixtureDef		*fixtureDef;
+@property (nonatomic, readonly) b2Transform		*box2dTransform;
+@property (nonatomic, copy) NSString			*physicsEditorName;
 
 // set scaleInWorld if self or parent scale != 1
 // future rev might calculate this on the fly, but more efficient to set explicitly for now
