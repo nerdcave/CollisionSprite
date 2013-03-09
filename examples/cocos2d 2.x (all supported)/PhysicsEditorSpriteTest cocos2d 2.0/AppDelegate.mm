@@ -59,8 +59,11 @@
 	navController_.navigationBarHidden = YES;
 	
 	// set the Navigation Controller as the root view controller
-	//	[window_ setRootViewController:rootViewController_];
-	[window_ addSubview:navController_.view];
+	if ( [[UIDevice currentDevice].systemVersion floatValue] < 6.0) {
+		[window_ addSubview:navController_.view];
+	} else {
+		[window_ setRootViewController:navController_];
+	}
 	
 	// make main window visible
 	[window_ makeKeyAndVisible];
