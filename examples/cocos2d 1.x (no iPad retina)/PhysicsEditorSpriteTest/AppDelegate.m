@@ -98,7 +98,11 @@
 	[viewController setView:glView];
 	
 	// make the View Controller a child of the main window
-	[window addSubview: viewController.view];
+	if ( [[UIDevice currentDevice].systemVersion floatValue] < 6.0) {
+		[window addSubview: viewController.view];
+	} else {
+		[window setRootViewController:viewController];
+	}
 	
 	[window makeKeyAndVisible];
 	
