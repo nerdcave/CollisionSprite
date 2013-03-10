@@ -9,11 +9,11 @@
 
 #import "cocos2d.h"
 
-@class PESprite;
+@class CollisionSprite;
 
 @interface HelloWorldLayer : CCLayer
 {
-	PESprite		*selectedSprite;
+	CollisionSprite	*selectedSprite;
 	CCLabelBMFont	*infoLabel;
 }
 

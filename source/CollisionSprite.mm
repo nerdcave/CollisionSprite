@@ -1,5 +1,5 @@
 //
-//  PESprite.mm
+//  CollisionSprite.mm
 //  Extension for CCSprite when you need polygonal collision detection.
 //
 //  Copyright 2012-2013, Jay Elaraj
@@ -14,9 +14,9 @@
 //
 
 
-#import "PESprite.h"
+#import "CollisionSprite.h"
 
-@implementation PESprite
+@implementation CollisionSprite
 
 @synthesize fixtureDef;
 @synthesize box2dTransform;
@@ -50,7 +50,7 @@
 
 // updates the transform to the sprite's current position
 -(void) updateB2Transform {
-	box2dTransform->Set([PESprite ptmScaledWithPosition:self.positionInWorldInPixels scale:self.scaleInWorld], 0.0f);
+	box2dTransform->Set([CollisionSprite ptmScaledWithPosition:self.positionInWorldInPixels scale:self.scaleInWorld], 0.0f);
 }
 
 // useful to override in subclasses
@@ -59,12 +59,12 @@
 }
 
 // hit test bounding rects only
--(BOOL) intersectsRectTarget:(PESprite*)target {
+-(BOOL) intersectsRectTarget:(CollisionSprite*)target {
 	return CGRectIntersectsRect([self boundingBoxInWorld], [target boundingBoxInWorld]);
 }
 
 // hit test self and target polygons
--(BOOL) intersectsTarget:(PESprite*)target testRectIntersection:(BOOL)testRectIntersection {
+-(BOOL) intersectsTarget:(CollisionSprite*)target testRectIntersection:(BOOL)testRectIntersection {
 	if (!fixtureDef || self == target || ![self isActive] || ![target isActive]) {
 		return NO;
 	}
@@ -118,7 +118,7 @@
 }
 
 // hit test self and target polygons; check the bounding rects by default
--(BOOL) intersectsTarget:(PESprite*)target {
+-(BOOL) intersectsTarget:(CollisionSprite*)target {
 	return [self intersectsTarget:target testRectIntersection:YES];
 }
 
@@ -147,7 +147,7 @@
 @end
 
 
-@implementation CCSprite (PESprite_Helpers)
+@implementation CCSprite (CollisionSprite_Helpers)
 
 -(CGRect) boundingBoxInWorld {
 	CGPoint worldPosition = self.positionInWorld;

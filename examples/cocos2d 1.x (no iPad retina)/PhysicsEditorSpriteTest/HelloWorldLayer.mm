@@ -1,6 +1,6 @@
 //
 //  HelloWorldLayer.mm
-//  PESpriteTest
+//  CollisionSpriteTest
 //
 //  Created by Jay Elaraj on 5/15/12.
 //  Copyright nerdcave.com 2012. All rights reserved.
@@ -8,7 +8,7 @@
 
 
 #import "HelloWorldLayer.h"
-#import "PESprite.h"
+#import "CollisionSprite.h"
 
 @implementation HelloWorldLayer
 
@@ -35,27 +35,27 @@
 		// load the shape data created by PhysicsEditor
 		[[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"data/physicsEditorObjects.plist"];
 
-		// create a PESprite just as you would a CCSprite
+		// create a CollisionSprite just as you would a CCSprite
 		// UNIV() macro will force the -hd version of the image if this is being run on the iPad
-		PESprite *ship = [PESprite spriteWithFile:UNIV(@"images/spaceship.png")];
+		CollisionSprite *ship = [CollisionSprite spriteWithFile:UNIV(@"images/spaceship.png")];
 		// important!!! set the physicsEditorName property to its shape name specified in PhysicsEditor
-		ship.physicsEditorName = @"spaceship";
+		[ship setPhysicsEditorName:@"spaceship"];
 
 		[self addChild:ship];
 		ship.position = ccp_IPAD(400, 100);
 
-		PESprite *satellite = [PESprite spriteWithFile:UNIV(@"images/satellite.png")];
-		satellite.physicsEditorName = @"satellite";
+		CollisionSprite *satellite = [CollisionSprite spriteWithFile:UNIV(@"images/satellite.png")];
+		[satellite setPhysicsEditorName:@"satellite"];
 		[self addChild:satellite];
 		satellite.position = ccp_IPAD(100, 100);
 
-		PESprite *chair = [PESprite spriteWithFile:UNIV(@"images/chair.png")];
-		chair.physicsEditorName = @"chair";
+		CollisionSprite *chair = [CollisionSprite spriteWithFile:UNIV(@"images/chair.png")];
+		[chair setPhysicsEditorName:@"chair"];
 		[self addChild:chair];
 		chair.position = ccp_IPAD(100, 260);
 
-		PESprite *earth = [PESprite spriteWithFile:UNIV(@"images/earth.png")];
-		earth.physicsEditorName = @"earth";
+		CollisionSprite *earth = [CollisionSprite spriteWithFile:UNIV(@"images/earth.png")];
+		[earth setPhysicsEditorName:@"earth"];
 		[self addChild:earth];
 		earth.position = ccp_IPAD(450, 260);
 
@@ -74,8 +74,8 @@
 	CCNode *node = nil;
 	BOOL hit = NO;
 	CCARRAY_FOREACH([self children], node) {
-		if (selectedSprite != node && [node isKindOfClass:[PESprite class]]) {
-			PESprite *sprite = (PESprite*)node;
+		if (selectedSprite != node && [node isKindOfClass:[CollisionSprite class]]) {
+			CollisionSprite *sprite = (CollisionSprite*)node;
 			// test for intersection
 			if ([selectedSprite intersectsTarget:sprite]) {
 				[infoLabel setString:[NSString stringWithFormat:@"%@ and %@ HIT!", selectedSprite.physicsEditorName, sprite.physicsEditorName]];
@@ -93,8 +93,8 @@
 	CCNode *node = nil;
 	CCARRAY_FOREACH([self children], node) {
 		if (CGRectContainsPoint(node.boundingBox, touchLocation)) {
-			if ([node isKindOfClass:[PESprite class]]) {
-				selectedSprite = (PESprite*)node;
+			if ([node isKindOfClass:[CollisionSprite class]]) {
+				selectedSprite = (CollisionSprite*)node;
 				break;
 			}
 		}

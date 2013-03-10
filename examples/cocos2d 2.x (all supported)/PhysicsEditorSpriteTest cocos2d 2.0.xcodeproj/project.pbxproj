@@ -178,7 +178,7 @@
 		692F27AB15684F320080FA89 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 692F27A915684F320080FA89 /* data */; };
 		692F27AC15684F320080FA89 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 692F27AA15684F320080FA89 /* images */; };
 		692F27C315685CE80080FA89 /* GB2ShapeCache.mm in Sources */ = {isa = PBXBuildFile; fileRef = 692F27BF15685CD90080FA89 /* GB2ShapeCache.mm */; };
-		692F27C415685CE80080FA89 /* PESprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = 692F27C115685CD90080FA89 /* PESprite.mm */; };
+		692F27C415685CE80080FA89 /* CollisionSprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = 692F27C115685CD90080FA89 /* CollisionSprite.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -537,9 +537,8 @@
 		692F27AA15684F320080FA89 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = images; path = Resources/images; sourceTree = "<group>"; };
 		692F27BE15685CD90080FA89 /* GB2ShapeCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GB2ShapeCache.h; path = ../../../source/GB2ShapeCache.h; sourceTree = "<group>"; };
 		692F27BF15685CD90080FA89 /* GB2ShapeCache.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = GB2ShapeCache.mm; path = ../../../source/GB2ShapeCache.mm; sourceTree = "<group>"; };
-		692F27C015685CD90080FA89 /* PESprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PESprite.h; path = ../../../source/PESprite.h; sourceTree = "<group>"; };
-		692F27C115685CD90080FA89 /* PESprite.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = PESprite.mm; path = ../../../source/PESprite.mm; sourceTree = "<group>"; };
-		692F27C215685CD90080FA89 /* PESpriteConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PESpriteConfig.h; path = ../../../source/PESpriteConfig.h; sourceTree = "<group>"; };
+		692F27C015685CD90080FA89 /* CollisionSprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CollisionSprite.h; path = ../../../source/CollisionSprite.h; sourceTree = "<group>"; };
+		692F27C115685CD90080FA89 /* CollisionSprite.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = CollisionSprite.mm; path = ../../../source/CollisionSprite.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1135,9 +1134,8 @@
 			children = (
 				692F27BE15685CD90080FA89 /* GB2ShapeCache.h */,
 				692F27BF15685CD90080FA89 /* GB2ShapeCache.mm */,
-				692F27C015685CD90080FA89 /* PESprite.h */,
-				692F27C115685CD90080FA89 /* PESprite.mm */,
-				692F27C215685CD90080FA89 /* PESpriteConfig.h */,
+				692F27C015685CD90080FA89 /* CollisionSprite.h */,
+				692F27C115685CD90080FA89 /* CollisionSprite.mm */,
 			);
 			name = "PhysicsEditorSprite source";
 			sourceTree = "<group>";
@@ -1218,7 +1216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				692F27C315685CE80080FA89 /* GB2ShapeCache.mm in Sources */,
-				692F27C415685CE80080FA89 /* PESprite.mm in Sources */,
+				692F27C415685CE80080FA89 /* CollisionSprite.mm in Sources */,
 				692F2799156831FB0080FA89 /* HelloWorldLayer.mm in Sources */,
 				692F23A615682EFA0080FA89 /* CCAction.m in Sources */,
 				692F23A915682EFA0080FA89 /* CCActionCamera.m in Sources */,

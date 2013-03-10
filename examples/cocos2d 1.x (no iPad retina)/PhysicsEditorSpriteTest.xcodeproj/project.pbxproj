@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		69295B8D1562F2EE00173644 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 69295B8C1562F2EE00173644 /* data */; };
 		692F27B715685BAC0080FA89 /* GB2ShapeCache.mm in Sources */ = {isa = PBXBuildFile; fileRef = 692F27B3156858E20080FA89 /* GB2ShapeCache.mm */; };
-		692F27B815685BAC0080FA89 /* PESprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = 692F27B5156858E20080FA89 /* PESprite.mm */; };
 		693426CA1562E40D00F67B1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693426C91562E40D00F67B1F /* QuartzCore.framework */; };
 		693426CC1562E40D00F67B1F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693426CB1562E40D00F67B1F /* OpenGLES.framework */; };
 		693426CE1562E40D00F67B1F /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693426CD1562E40D00F67B1F /* OpenAL.framework */; };
@@ -158,14 +157,13 @@
 		693428A31562E41500F67B1F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 693428A21562E41500F67B1F /* RootViewController.m */; };
 		693428A61562E41500F67B1F /* HelloWorldLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 693428A51562E41500F67B1F /* HelloWorldLayer.mm */; };
 		693428C31562E6A600F67B1F /* images in Resources */ = {isa = PBXBuildFile; fileRef = 693428C21562E6A600F67B1F /* images */; };
+		961636D316EC0B5C0041978A /* CollisionSprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = 961636D116EC0B5C0041978A /* CollisionSprite.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		69295B8C1562F2EE00173644 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = Resources/data; sourceTree = "<group>"; };
 		692F27B2156858E20080FA89 /* GB2ShapeCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GB2ShapeCache.h; path = ../../../source/GB2ShapeCache.h; sourceTree = "<group>"; };
 		692F27B3156858E20080FA89 /* GB2ShapeCache.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = GB2ShapeCache.mm; path = ../../../source/GB2ShapeCache.mm; sourceTree = "<group>"; };
-		692F27B4156858E20080FA89 /* PESprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PESprite.h; path = ../../../source/PESprite.h; sourceTree = "<group>"; };
-		692F27B5156858E20080FA89 /* PESprite.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = PESprite.mm; path = ../../../source/PESprite.mm; sourceTree = "<group>"; };
 		693426C51562E40D00F67B1F /* PhysicsEditorSpriteTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhysicsEditorSpriteTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		693426C91562E40D00F67B1F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		693426CB1562E40D00F67B1F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -469,6 +467,8 @@
 		693428A51562E41500F67B1F /* HelloWorldLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HelloWorldLayer.mm; sourceTree = "<group>"; };
 		693428AA1562E41500F67B1F /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		693428C21562E6A600F67B1F /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = images; path = Resources/images; sourceTree = "<group>"; };
+		961636D116EC0B5C0041978A /* CollisionSprite.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CollisionSprite.mm; path = ../../../source/CollisionSprite.mm; sourceTree = "<group>"; };
+		961636D216EC0B5C0041978A /* CollisionSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollisionSprite.h; path = ../../../source/CollisionSprite.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -495,8 +495,8 @@
 			children = (
 				692F27B2156858E20080FA89 /* GB2ShapeCache.h */,
 				692F27B3156858E20080FA89 /* GB2ShapeCache.mm */,
-				692F27B4156858E20080FA89 /* PESprite.h */,
-				692F27B5156858E20080FA89 /* PESprite.mm */,
+				961636D116EC0B5C0041978A /* CollisionSprite.mm */,
+				961636D216EC0B5C0041978A /* CollisionSprite.h */,
 			);
 			name = "PhysicsEditorSprite Classes";
 			sourceTree = "<group>";
@@ -1068,7 +1068,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				692F27B715685BAC0080FA89 /* GB2ShapeCache.mm in Sources */,
-				692F27B815685BAC0080FA89 /* PESprite.mm in Sources */,
 				693426F21562E40D00F67B1F /* CCAction.m in Sources */,
 				693426F51562E40D00F67B1F /* CCActionCamera.m in Sources */,
 				693426F81562E40D00F67B1F /* CCActionEase.m in Sources */,
@@ -1199,6 +1198,7 @@
 				693428A01562E41500F67B1F /* AppDelegate.m in Sources */,
 				693428A31562E41500F67B1F /* RootViewController.m in Sources */,
 				693428A61562E41500F67B1F /* HelloWorldLayer.mm in Sources */,
+				961636D316EC0B5C0041978A /* CollisionSprite.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

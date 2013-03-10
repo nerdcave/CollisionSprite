@@ -1,5 +1,5 @@
 //
-//  PESprite.h
+//  CollisionSprite.h
 //  Extension for CCSprite when you need polygonal collision detection.
 //
 //  Copyright 2012-2013, Jay Elaraj
@@ -38,7 +38,7 @@ public:
 @end
 
 
-@interface PESprite : CCSprite {
+@interface CollisionSprite : CCSprite {
 	b2Transform		*box2dTransform;
 	FixtureDef		*fixtureDef;
 }
@@ -53,9 +53,9 @@ public:
 
 
 -(BOOL) isActive;
--(BOOL) intersectsTarget:(PESprite*)target testRectIntersection:(BOOL)testRectIntersection;
--(BOOL) intersectsTarget:(PESprite*)target;
--(BOOL) intersectsRectTarget:(PESprite*)target;
+-(BOOL) intersectsTarget:(CollisionSprite*)target testRectIntersection:(BOOL)testRectIntersection;
+-(BOOL) intersectsTarget:(CollisionSprite*)target;
+-(BOOL) intersectsRectTarget:(CollisionSprite*)target;
 
 @end
 
@@ -69,7 +69,7 @@ public:
 
 
 // these are generic enough to extend CCSprite (or even CCNode)
-@interface CCSprite (PESprite_Helpers)
+@interface CCSprite (CollisionSprite_Helpers)
 
 -(CGPoint) positionInWorld;
 -(CGPoint) positionInWorldInPixels;
