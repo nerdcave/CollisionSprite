@@ -2,7 +2,7 @@
 //  PESprite.mm
 //  Extension for CCSprite when you need polygonal collision detection.
 //
-//  Copyright 2012, Jay Elaraj
+//  Copyright 2012-2013, Jay Elaraj
 //		http://nerdcave.com
 //
 //  All rights reserved.
@@ -15,13 +15,6 @@
 
 
 #import "PESprite.h"
-
-@interface PESprite (PrivateMethods)
-
--(void) updateB2Transform;
-
-@end
-
 
 @implementation PESprite
 
@@ -154,8 +147,7 @@
 @end
 
 
-// these are generic enough to just extend CCNode
-@implementation CCNode (PESprite_Helpers)
+@implementation CCSprite (PESprite_Helpers)
 
 -(CGRect) boundingBoxInWorld {
 	CGPoint worldPosition = self.positionInWorld;
@@ -169,7 +161,7 @@
 }
 
 -(CGPoint) positionInWorldInPixels {
-	return ccpMult([self.parent convertToWorldSpace:self.position], CC_CONTENT_SCALE_FACTOR());
+	return ccpMult([self positionInWorld], CC_CONTENT_SCALE_FACTOR());
 }
 
 @end

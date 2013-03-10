@@ -2,7 +2,7 @@
 //  PESprite.h
 //  Extension for CCSprite when you need polygonal collision detection.
 //
-//  Copyright 2012, Jay Elaraj
+//  Copyright 2012-2013, Jay Elaraj
 //		http://nerdcave.com
 //
 //  All rights reserved.
@@ -41,8 +41,6 @@ public:
 @interface PESprite : CCSprite {
 	b2Transform		*box2dTransform;
 	FixtureDef		*fixtureDef;
-	NSString*		physicsEditorName;
-	CGFloat			scaleFactor;
 }
 
 @property (nonatomic, readonly) FixtureDef		*fixtureDef;
@@ -52,6 +50,7 @@ public:
 // set scaleInWorld if self or parent scale != 1
 // future rev might calculate this on the fly, but more efficient to set explicitly for now
 @property (nonatomic, assign) CGFloat			scaleInWorld;
+
 
 -(BOOL) isActive;
 -(BOOL) intersectsTarget:(PESprite*)target testRectIntersection:(BOOL)testRectIntersection;
@@ -69,7 +68,8 @@ public:
 @end
 
 
-@interface CCNode (PESprite_Helpers)
+// these are generic enough to extend CCSprite (or even CCNode)
+@interface CCSprite (PESprite_Helpers)
 
 -(CGPoint) positionInWorld;
 -(CGPoint) positionInWorldInPixels;
